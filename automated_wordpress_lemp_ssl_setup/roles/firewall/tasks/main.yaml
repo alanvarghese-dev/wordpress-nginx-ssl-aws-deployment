@@ -1,0 +1,29 @@
+---
+
+- name: Ensure UFW is installed
+  apt:
+    name: ufw
+    state: present
+    update_cache: yes
+
+- name: Allow SSH port 22 through firewall
+  ansible.builtin.ufw:
+    rule: allow
+    port: 22
+    proto: tcp
+
+- name: Allow HTTP port 80 through firewall
+  ansible.builtin.ufw:
+    rule: allow
+    port: 80
+    proto: tcp
+
+- name: Allow HTTPS port 443 through firewall
+  ansible.builtin.ufw:
+    rule: allow
+    port: 443
+    proto: tcp
+
+- name: Enable UFW
+  ansible.builtin.command: ufw --force enable
+   

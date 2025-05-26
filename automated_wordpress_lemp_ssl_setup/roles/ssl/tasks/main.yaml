@@ -1,0 +1,20 @@
+---
+- name: Install Certbot
+  apt:
+    name: 
+      - certbot
+      - python3-certbot-nginx
+    state: present
+    update_cache: yes
+
+- name: Obtain SSl Certificate from Let's Encrypt
+  command: >
+    certbot --nginx -d mywordpressite.zapto.org --non-interactive --agree-tos
+    --email alan.always4u@gmail.com --redirect
+  args:
+    creates: /etc/letsencrypt/live/mywordpressite.zapto.org/fullchain.pem
+
+- name: Reload Nginx to apply SSL config
+  service:
+    name: nginx
+    state: reloaded 

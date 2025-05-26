@@ -1,0 +1,16 @@
+---
+
+- name: Automated WordPress LEMP SSL Setup
+  hosts: all
+  become: yes
+  vars:
+    domain_name: mywordpressite.zapto.org
+
+ 
+  roles:
+    - common
+    - firewall
+    - lemp
+    - wordpress
+    - ssl
+    - nginx

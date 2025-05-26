@@ -1,0 +1,23 @@
+---
+
+- name: Configure Nginx for WordPress
+  template:
+    src: wordpress_nginx.conf.j2
+    dest: /etc/nginx/sites-available/wordpress
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Reload Nginx
+
+- name: Enable Nginx site config
+  file:
+    src: /etc/nginx/sites-available/wordpress
+    dest: /etc/nginx/sites-enabled/wordpress
+    state: link
+    force: true
+
+- name: Remove default site config
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+

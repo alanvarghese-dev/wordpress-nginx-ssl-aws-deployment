@@ -1,0 +1,45 @@
+---
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+    update_cache: yes
+- name: Install MySQL Server
+  apt:
+    name: mysql-server
+    state: present
+- name: Install PHP and extensions
+  apt:
+    name:
+      - php-fpm
+      - php-mysql
+      - php-curl
+      - php-gd
+      - php-mbstring
+      - php-xml
+      - php-xmlrpc
+      - php-soap
+      - php-intl
+      - php-zip
+    state: present
+- name: Install Unzip
+  apt:
+    name: unzip
+    state: present
+
+- name: Ensure Nginx is started and enabled
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+- name: Ensure MySQL is started and enabled
+  service:
+    name: mysql
+    state: started
+    enabled: yes
+- name: Ensure PHP-FPM is started and enabled
+  service:
+    name: php8.3-fpm
+    state: started
+    enabled: yes
+  
