@@ -129,7 +129,7 @@ I'm building real-world hybrid DevOps and Cybersecurity projects to transition i
 ## 📇 Contact
 
 📧 Email: thealanvarghese@gmail.com
-🌐 GitHub: [github.com/yourusernamegithub.com/yourusernamegithub.com/yourusername: [github.com/alanvarghese-dev](https://github.com/alanvarghese-dev/)  
+🌐 GitHub: [github.com/alanvarghese-dev](https://github.com/alanvarghese-dev/)  
 🔗 LinkedIn: https://www.linkedin.com/in/alan-varghese-dev/
 
 ---
