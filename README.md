@@ -1,21 +1,16 @@
-# 🧰 WordPress NGINX Setup on AWS (Manual & Automated)
+🧰 WordPress NGINX Setup on AWS (Manual & Automated)
 
 This repository contains two complete methods to deploy a WordPress website on an AWS EC2 instance using NGINX, MySQL, PHP, and SSL encryption via Let's Encrypt.
 
----
-
-## 📁 Project Structure
+ 📁 Project Structure
 
 wordpress-nginx-aws-setup/
 ├── automated_wordpress_lemp_setup/ # Fully automated deployment using Ansible
 └── manual_wordpress_lemp_setup/ # Manual setup with step-by-step instructions
 
+ 🚀 Deployment Options:
 
----
-
-## 🚀 Deployment Options
-
-### 1️⃣ Automated WordPress LEMP Setup with Ansible
+ 1️⃣ Automated WordPress LEMP Setup with Ansible
 
 This setup uses Ansible to fully automate the deployment of a secure WordPress site, including:
 
@@ -29,14 +24,10 @@ This setup uses Ansible to fully automate the deployment of a secure WordPress s
 
 📖 Details: [Read the full documentation »](./automated_wordpress_lemp_setup/README.md)
 
----
 
-### 2️⃣ Manual WordPress Setup
+2️⃣ Manual WordPress Setup
 
-This approach documents a manual step-by-step installation of WordPress on an AWS EC2 instance using NGINX.
-
-It covers:
-
+This approach documents a manual step-by-step installation of WordPress on an AWS EC2 instance using NGINX.It covers:
 - Installing NGINX, MySQL, PHP
 - Configuring UFW Firewall
 - Setting up WordPress manually
@@ -46,34 +37,21 @@ It covers:
 
 📖 Details: [Read the full documentation »](./manual_wordpress_lemp_setup/README.md)
 
----
-
-## 🛠️ Requirements
+ 🛠️ Requirements
 
 For both setups:
-
 - An AWS EC2 instance running Ubuntu 24.10
 - A registered domain name (used for SSL and WordPress site access)
 - SSH access to the EC2 instance
 - Ansible installed (for automated setup)
 
----
+ 👨‍💻 Author
 
-## 👨‍💻 Author
+Alan Varghese: thealanvarghese@gmail.com  
+GitHub: [@alanvarghese-dev](https://github.com/alanvarghese-dev)
+LinkedIn: https://linkedin.com/in/alanvarghese-dev
 
-- Alan Varghese  
-📧 alan.always4u@gmail.com  
-🔗 GitHub: [@alanvarghese-dev](https://github.com/alanvarghese-dev)
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
----
-
-## 🌐 Screenshots & Extras
+ 🌐 Screenshots & Extras
 
 Screenshots for each step of both projects are maintained in their respective folders for documentation purposes.
 

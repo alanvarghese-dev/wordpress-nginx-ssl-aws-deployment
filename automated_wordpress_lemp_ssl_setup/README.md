@@ -1,11 +1,8 @@
-# 🌐 Automated WordPress Deployment using LEMP Stack with SSL on AWS (Ansible)
+Automated WordPress Deployment using LEMP Stack with SSL on AWS (Ansible)
 
-This project automates the full deployment of a WordPress site on an Ubuntu 24.10 EC2 instance using Ansible.
-It sets up the LEMP stack (Linux, Nginx, MySQL, PHP), configures a secure firewall, installs WordPress, obtains a Let's Encrypt SSL certificate, and configures Nginx for secure access via HTTPS.
+This project automates the full deployment of a WordPress site on an Ubuntu 24.10 EC2 instance using Ansible.It sets up the LEMP stack (Linux, Nginx, MySQL, PHP), configures a secure firewall, installs WordPress, obtains a Let's Encrypt SSL certificate, and configures Nginx for secure access via HTTPS.
 
----
-
-## 📁 Folder Structure
+ 📁 Folder Structure
 
 automated_wordpress_lemp_ssl_setup/
 ├── inventory # Ansible inventory file
@@ -28,10 +25,7 @@ automated_wordpress_lemp_ssl_setup/
 │ └── wordpress_nginx.conf.j2 # Nginx virtual host template
 ├─screenshots/
 
-
----
-
-## 🧰 Tools & Stack
+ 🧰 Tools & Technologies:
 
 - OS: Ubuntu 24.10 (on AWS EC2)
 - Web Server: Nginx
@@ -41,9 +35,7 @@ automated_wordpress_lemp_ssl_setup/
 - Automation: Ansible
 - SSL: Let’s Encrypt via Certbot
 
----
-
-## 📦 Role Descriptions
+ 📦 Role Descriptions
 
 - `common`: Runs system update and upgrade via `apt`.
 
@@ -64,9 +56,7 @@ automated_wordpress_lemp_ssl_setup/
   - Uses Certbot to generate and apply an SSL certificate for your domain.
   - Ensures secure redirect from HTTP to HTTPS.
 
----
-
-## 🔥 Handlers
+ 🔥 Handlers
 
 Located in `roles/nginx/handlers/main.yaml`:
 
@@ -80,9 +70,7 @@ Located in `roles/nginx/handlers/main.yaml`:
     name: nginx
     state: restarted
 
----
-
-## 🔐 SSL Certificate
+ 🔐 SSL Certificate
 
 The playbook uses Certbot to obtain an SSL certificate:
 
@@ -90,17 +78,13 @@ Make sure your domain (e.g., mywordpressite.zapto.org) points to your EC2 instan
 
 Certbot uses --non-interactive mode to automatically apply SSL and redirect all HTTP traffic to HTTPS.
 
----
-
-## 🗒️ Inventory File Example
+ 🗒️ Inventory File Example
 
 Create an inventory file with your EC2 details:
 [wordpress]
 <YOUR_EC2_PUBLIC_IP> ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/your-key.pem
 
----
-
-## 🛠️ Usage Instructions
+ 🛠️ Usage Instructions
 
 1.  Update Variables:
 - Ensure your domain name is set in the SSL task (roles/ssl/tasks/main.yaml).
@@ -108,9 +92,7 @@ Create an inventory file with your EC2 details:
 2. Run the Playbook
 - ansible-playbook -i inventory site.yaml
 
----
-
-##  ✅ Post-Deployment
+ ✅ Post-Deployment
 
 Once the playbook finishes:
 
@@ -120,10 +102,7 @@ Complete WordPress installation (username, admin, password setup via UI)
 
 Login to WordPress Admin Dashboard
 
-
----
-
-##  🧪 Troubleshooting
+ 🧪 Troubleshooting:
 
 Problem                                         	Fix
 
@@ -133,9 +112,7 @@ WordPress Database Error	        - Ensure database and user were created properl
 SSL Not Working	                        - Verify ports 80/443 are open in AWS Security Group and UFW
 
 
----
-
-##  💡 Tips
+💡 Tips
 
 - Always remove default Nginx config (/etc/nginx/sites-enabled/default) to avoid conflicts.
 
@@ -143,36 +120,25 @@ SSL Not Working	                        - Verify ports 80/443 are open in AWS Se
 
 - You can re-run the playbook to apply changes or recover from failures.
 
-
----
-
-##  🔍 Screenshots
+ 🔍 Screenshots
 
 - All deployment and verification screenshots have been saved locally and can be added in a /screenshots folder in this repo.
 
----
-
-## 📌 Example Group Vars (Optional)
+📌 Example Group Vars (Optional)
 (Not used in this project, but can be added later)
 
-# group_vars/all.yaml
+#group_vars/all.yaml
 mysql_root_password: StrongPassword123!
 wordpress_db: wp_database
 wordpress_user: wp_user
 wordpress_password: StrongPassword123!
 
----
-
-##  📃 License
-
-This project is open-source and available under the MIT License.
-
-
----
-
-##  👤 Author
+ 👤 Author
 
 Alan Varghese
-GitHub: @alanvarghese-dev
-Email: alan.always4u@gmail.com
----
+GitHub: https://github.com/alanvarghese-dev
+Email: thealanvarghese@gmail.com
+LinkedIn: https://linkedin.com/in/alanvarghese-dev
+
+
+
